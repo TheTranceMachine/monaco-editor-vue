@@ -1,10 +1,15 @@
 <template>
-  <Editor />
-  <br />
-  <DiffEditor />
+  <header>
+    <h1>Monaco Editor integration</h1>
+    <p>Current route name: {{ $route.name }}</p>
+  </header>
+  <nav>
+    <ul>
+      <li><router-link :to="{ name: 'home' }">home</router-link></li>
+      <li><router-link :to="{ name: 'diff' }">diff</router-link></li>
+    </ul>
+  </nav>
+  <main>
+    <router-view class="view"></router-view>
+  </main>
 </template>
-
-<script setup lang="ts">
-  import Editor from './components/MonacoEditor.vue';
-  import DiffEditor from './components/MonacoDiffEditor.vue';
-</script>
